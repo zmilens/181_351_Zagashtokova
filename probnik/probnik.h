@@ -1,19 +1,21 @@
 #pragma once
-class exam
-{
+class myClass {
+
 private:
-	int l; //длина
-	char *b;
+	int length;
+	char *p;
 public:
-	exam();
-	exam(char *b2);
-	exam(std::string &s);
-	~exam();
+	myClass();
+	myClass(char *p1);
+	myClass(std::string &sl);
+	~myClass();
+
 	void clear();
-	void add(char *b2);
-	void add(std::string s);
-	void insert(int p, char *b2);
-	void cut(int p, int numm);
+	void add(char *p1);
+	void add(std::string sl);
+	void insert(int pos, char *p1);
+	void insert(int pos, std::string sl);
+	void cut(int pos, int num);
 	void input();
 	void print();
 };
