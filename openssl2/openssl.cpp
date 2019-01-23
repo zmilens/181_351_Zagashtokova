@@ -36,7 +36,6 @@ int main()
 		{
 
 		}
-
 		int a;
 		double b;
 		int fnc1()
@@ -69,8 +68,8 @@ int main()
 	// 4. САМ ПРОЦЕСС ШИФРОВАНИЯ - ФУКНЦИЯ EVP_EncryptUpdate
 	int len;
 	FILE *in, *out;
-	in = fopen("in.txt", "rb");
-	out = fopen("out.txt", "wb");
+	in = fopen("in.txt", "rb");//открываем файл(читаем)
+	out = fopen("out.txt", "wb");//создаем файл(пишем)
 	for (;;) {
 		plaintext_len = fread(plaintext, 1, 256, in);
 		if (plaintext_len <= 0) {
@@ -90,7 +89,7 @@ int main()
 	EVP_EncryptFinal_ex(ctx, cryptedtext + len, &len);
 	cryptedtext_len += len;
 	fwrite(cryptedtext, 1, len, out);
-
+	
 	// 6. Удаление структуры
 	EVP_CIPHER_CTX_free(ctx);
 	fclose(in);
